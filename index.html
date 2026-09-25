@@ -1,0 +1,2801 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The AutoCAD Disha | Engineering & Technology Training</title>
+
+  <meta
+    name="description"
+    content="Industry-oriented training in AutoCAD, Mechanical Design, CAD/CAM and Programming."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+<!-- <link rel="stylesheet" href="style.css"> -->
+ 
+</head>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-2: #0b1728;
+      --card: rgba(255,255,255,0.055);
+      --card-hover: rgba(255,255,255,0.085);
+      --text: #f7f9fc;
+      --muted: #9aa8bb;
+      --line: rgba(255,255,255,0.10);
+      --accent: #ff6b2c;
+      --accent-2: #ff914d;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --max: 1200px;
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 80% 5%, rgba(255,107,44,0.12), transparent 28%),
+        radial-gradient(circle at 10% 30%, rgba(59,130,246,0.08), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(7,17,31,0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), #ff3d00);
+      box-shadow: 0 8px 25px rgba(255,107,44,0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      font-size: 14px;
+      font-weight: 500;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      padding: 11px 18px !important;
+      border-radius: 10px;
+      color: white !important;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 130px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,107,44,0.25);
+      background: rgba(255,107,44,0.07);
+      color: #ffad7f;
+      padding: 8px 13px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      padding: 14px 21px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--accent);
+      box-shadow: 0 10px 30px rgba(255,107,44,0.20);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--accent-2);
+    }
+
+    .btn-secondary {
+      color: white;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.09);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      position: relative;
+      height: 510px;
+    }
+
+    .machine-card {
+      position: absolute;
+      inset: 35px 0 35px 45px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,107,44,.13), transparent 45%),
+        linear-gradient(180deg, #122238, #091421);
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    }
+
+    .technical-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .25;
+      background-image:
+        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .gear {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 18px dotted rgba(255,107,44,.65);
+      border-radius: 50%;
+      left: 50%;
+      top: 46%;
+      transform: translate(-50%, -50%);
+      animation: rotateGear 18s linear infinite;
+    }
+
+    .gear::after {
+      content: "";
+      position: absolute;
+      width: 85px;
+      height: 85px;
+      border: 16px solid rgba(255,107,44,.5);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .gear-small {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border: 11px dotted rgba(59,130,246,.7);
+      border-radius: 50%;
+      right: 15%;
+      bottom: 16%;
+      animation: rotateGear 11s linear infinite reverse;
+    }
+
+    @keyframes rotateGear {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .floating-label {
+      position: absolute;
+      background: rgba(10,20,34,.85);
+      border: 1px solid var(--line);
+      padding: 12px 15px;
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      font-size: 12px;
+      color: #dbe5f1;
+      box-shadow: 0 15px 30px rgba(0,0,0,.2);
+    }
+
+    .label-1 {
+      left: -5px;
+      top: 100px;
+    }
+
+    .label-2 {
+      right: -5px;
+      top: 160px;
+    }
+
+    .label-3 {
+      left: 35px;
+      bottom: 75px;
+    }
+
+    /* ================= STATS ================= */
+
+    .stats {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 25px 0;
+      background: rgba(255,255,255,0.018);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 8px;
+    }
+
+    .stat h3 {
+      font-family: "Space Grotesk";
+      font-size: 30px;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    .section-tag {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk";
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ================= CATEGORIES ================= */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
+    }
+
+    .category {
+      padding: 27px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .category:hover {
+      transform: translateY(-6px);
+      background: var(--card-hover);
+      border-color: rgba(255,107,44,.3);
+    }
+
+    .category-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255,107,44,.10);
+      color: var(--accent);
+      font-size: 21px;
+      margin-bottom: 22px;
+    }
+
+    .category h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .category p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= COURSES ================= */
+
+    .filter-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      color: #cbd5e1;
+      background: transparent;
+      padding: 9px 15px;
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .filter.active,
+    .filter:hover {
+      color: white;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .course-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      transition: .3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,107,44,.28);
+    }
+
+    .course-image {
+      height: 190px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,107,44,.18), transparent 40%),
+        #0d1a2c;
+    }
+
+    .course-image i {
+      font-size: 68px;
+      color: rgba(255,107,44,.75);
+    }
+
+    .course-badge {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      background: rgba(7,17,31,.82);
+      border: 1px solid var(--line);
+      padding: 6px 9px;
+      border-radius: 7px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .course-content {
+      padding: 21px;
+    }
+
+    .course-content h3 {
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .course-content p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .course-meta {
+      display: flex;
+      gap: 14px;
+      color: #aebbc9;
+      font-size: 11px;
+      margin-bottom: 19px;
+    }
+
+    .course-meta i {
+      color: var(--accent);
+      margin-right: 4px;
+    }
+
+    .course-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .course-price {
+      font-weight: 800;
+    }
+
+    .course-link {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ================= PATH ================= */
+
+    .path-section {
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,.018), transparent);
+    }
+
+    .path {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .path::before {
+      content: "";
+      position: absolute;
+      top: 36px;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background: linear-gradient(90deg,var(--accent),var(--blue));
+      opacity: .35;
+    }
+
+    .path-step {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .path-number {
+      width: 72px;
+      height: 72px;
+      margin: auto;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,107,44,.35);
+      background: #0b1728;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .path-step h4 {
+      margin-top: 17px;
+      font-size: 13px;
+    }
+
+    .path-step p {
+      color: var(--muted);
+      font-size: 11px;
+      padding: 0 8px;
+      margin-top: 5px;
+    }
+
+    /* ================= WHY US ================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .why-visual {
+      height: 430px;
+      border-radius: 25px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(255,107,44,.16), transparent),
+        #0c192b;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blueprint {
+      position: absolute;
+      inset: 40px;
+      border: 1px dashed rgba(59,130,246,.4);
+      border-radius: 12px;
+    }
+
+    .blueprint::before,
+    .blueprint::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(59,130,246,.35);
+    }
+
+    .blueprint::before {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .blueprint::after {
+      width: 270px;
+      height: 100px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .why-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 15px;
+    }
+
+    .why-icon {
+      flex: 0 0 45px;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: rgba(255,107,44,.10);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+    }
+
+    .why-item h4 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .project {
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      background: #0c192a;
+    }
+
+    .project-bg {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg,rgba(255,107,44,.15),transparent),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255,255,255,.025) 10px,
+          rgba(255,255,255,.025) 11px
+        );
+    }
+
+    .project-bg i {
+      font-size: 75px;
+      color: rgba(255,107,44,.3);
+    }
+
+    .project-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(3,8,15,.95));
+    }
+
+    .project-info h3 {
+      font-size: 17px;
+    }
+
+    .project-info p {
+      color: #aab6c5;
+      font-size: 11px;
+    }
+
+    /* ================= TRAINERS ================= */
+
+    .trainer-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .trainer {
+      text-align: center;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+    }
+
+    .trainer-photo {
+      width: 85px;
+      height: 85px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg,#172b45,#0d1a2b);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 30px;
+    }
+
+    .trainer h3 {
+      font-size: 15px;
+    }
+
+    .trainer p {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* ================= TESTIMONIALS ================= */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 25px;
+      border-radius: var(--radius);
+    }
+
+    .stars {
+      color: #ffb020;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial > p {
+      color: #c5cfdb;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .student {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .student-avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #17283d;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    .student strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .student span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* ================= CERTIFICATE ================= */
+
+    .certificate {
+      padding: 45px;
+      border: 1px solid rgba(255,107,44,.2);
+      border-radius: 26px;
+      background:
+        linear-gradient(120deg,rgba(255,107,44,.09),transparent),
+        var(--card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .certificate-content {
+      max-width: 650px;
+    }
+
+    .certificate-content h2 {
+      font-family: "Space Grotesk";
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .certificate-content p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .certificate-icon {
+      width: 130px;
+      height: 130px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,107,44,.25);
+      color: var(--accent);
+      font-size: 55px;
+      background: rgba(255,107,44,.05);
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .faq-question i {
+      transition: .3s;
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 12px;
+      transition: .35s;
+    }
+
+    .faq-answer p {
+      padding-bottom: 20px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-item.open .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 50px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: rgba(255,107,44,.10);
+      color: var(--accent);
+    }
+
+    .contact-item h4 {
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .contact-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-form {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group.full {
+      grid-column: 1/-1;
+    }
+
+    label {
+      display: block;
+      color: #cbd5e1;
+      font-size: 11px;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: white;
+      padding: 12px 13px;
+      border-radius: 9px;
+      outline: none;
+      font-size: 12px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(255,107,44,.55);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    select option {
+      background: #0b1728;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 55px 0 25px;
+      background: rgba(0,0,0,.15);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 320px;
+      margin-top: 15px;
+    }
+
+    footer h4 {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    footer ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    footer li,
+    footer li a {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    footer li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      color: #718096;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* ================= MODAL ================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(8px);
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .modal.show {
+      display: grid;
+    }
+
+    .modal-box {
+      width: min(600px,100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #0c192b;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      border: none;
+      background: rgba(255,255,255,.06);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .modal-box h2 {
+      font-family: "Space Grotesk";
+      font-size: 28px;
+      margin-bottom: 10px;
+      padding-right: 40px;
+    }
+
+    .modal-box > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .module-list {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .module {
+      border: 1px solid var(--line);
+      padding: 11px 13px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+
+    .module i {
+      color: var(--green);
+      margin-right: 7px;
+    }
+
+    /* ================= TO TOP ================= */
+
+    .top-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: #101f33;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 500;
+    }
+
+    .top-btn.show {
+      display: grid;
+      place-items: center;
+    }
+
+    /* ================= REVEAL ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1000px) {
+      .hero-grid,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-visual {
+        max-width: 700px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .course-grid,
+      .project-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .trainer-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .path {
+        grid-template-columns: repeat(3,1fr);
+        gap: 35px 0;
+      }
+
+      .path::before {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: #091522;
+        border-bottom: 1px solid var(--line);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-visual {
+        height: 380px;
+      }
+
+      .machine-card {
+        inset: 20px 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .category-grid,
+      .course-grid,
+      .project-grid,
+      .testimonial-grid,
+      .trainer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .path {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .certificate {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .label-2 {
+        right: 0;
+      }
+    }
+  </style> 
+
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">
+          <span class="logo-mark">
+            <i class="fa-solid fa-gear"></i>
+          </span>
+          THE AUTOCAD DISHA
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#mechanical">Mechanical</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="nav-cta">Enroll Now</a></li>
+        </ul>
+
+        <button class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Industry-Oriented Technical Training
+          </div>
+
+          <h1>
+            Learn Skills.<br>
+            <span>Build Your Career.</span>
+          </h1>
+
+          <p class="hero-description">
+            Master AutoCAD, Mechanical Design, CAD/CAM and Programming
+            through practical, project-based technical training designed
+            for students and aspiring engineers.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#courses" class="btn btn-primary">
+              Explore Courses
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Talk to Counsellor
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual reveal">
+
+          <div class="machine-card">
+            <div class="technical-grid"></div>
+
+            <div class="gear"></div>
+            <div class="gear-small"></div>
+
+            <div class="floating-label label-1">
+              <i class="fa-solid fa-cube"></i>
+              3D CAD Design
+            </div>
+
+            <div class="floating-label label-2">
+              <i class="fa-solid fa-code"></i>
+              Programming
+            </div>
+
+            <div class="floating-label label-3">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              Practical Training
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <div class="stats">
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <h3>20+</h3>
+          <p>Technical Courses</p>
+        </div>
+
+        <div class="stat">
+          <h3>4</h3>
+          <p>Learning Domains</p>
+        </div>
+
+        <div class="stat">
+          <h3>100%</h3>
+          <p>Practical Focus</p>
+        </div>
+
+        <div class="stat">
+          <h3>1:1</h3>
+          <p>Project Guidance</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">Explore Domains</div>
+          <h2 class="section-title">
+            Skills that connect education with industry.
+          </h2>
+          <p class="section-description">
+            Choose a learning path based on your career goals,
+            engineering discipline and current skill level.
+          </p>
+        </div>
+
+        <div class="category-grid">
+
+          <div class="category reveal">
+            <div class="category-icon">
+              <i class="fa-solid fa-drafting-compass"></i>
+            </div>
+            <h3>AutoCAD & Drafting</h3>
+            <p>
+              Learn professional 2D drafting, 3D modeling and
+              engineering drawing practices.
+            </p>
+          </div>
+
+          <div class="category reveal">
+            <div class="category-icon">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h3>Mechanical Design</h3>
+            <p>
+              Develop skills in SolidWorks, CATIA, Creo,
+              GD&T and mechanical product design.
+            </p>
+          </div>
+
+          <div class="category reveal">
+            <div class="category-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Programming</h3>
+            <p>
+              Build programming fundamentals with C, C++,
+              Java, Python and Web Development.
+            </p>
+          </div>
+
+          <div class="category reveal">
+            <div class="category-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3>Technology</h3>
+            <p>
+              Explore IoT, Robotics, MATLAB, Automation,
+              AI and other emerging technologies.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= COURSES ================= -->
+
+    <section id="courses">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">Our Courses</div>
+          <h2 class="section-title">
+            Learn the tools companies use.
+          </h2>
+          <p class="section-description">
+            Explore technical courses designed around practical
+            skills, projects and industry applications.
+          </p>
+        </div>
+
+
+        <div class="filter-buttons">
+          <button class="filter active" data-filter="all">All Courses</button>
+          <button class="filter" data-filter="cad">CAD / Design</button>
+          <button class="filter" data-filter="mechanical">Mechanical</button>
+          <button class="filter" data-filter="programming">Programming</button>
+          <button class="filter" data-filter="technology">Technology</button>
+        </div>
+
+
+        <div class="course-grid">
+
+          <div class="course-card reveal" data-category="cad">
+            <div class="course-image">
+              <span class="course-badge">POPULAR</span>
+              <i class="fa-solid fa-drafting-compass"></i>
+            </div>
+            <div class="course-content">
+              <h3>AutoCAD 2D & 3D</h3>
+              <p>
+                Master professional drafting and 3D modeling
+                for engineering applications.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 2 Years 2 Months</span>
+                <span><i class="fa-solid fa-signal"></i> Beginner</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹38,776</span>
+                <a href="#" class="course-link" onclick="openCourse('autocad')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="mechanical">
+            <div class="course-image">
+              <span class="course-badge">MECHANICAL</span>
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div class="course-content">
+              <h3>SolidWorks</h3>
+              <p>
+                Learn part modeling, assemblies, drawings and
+                mechanical product design.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 1 Year</span>
+                <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹39,000</span>
+                <a href="#" class="course-link" onclick="openCourse('solidworks')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="mechanical">
+            <div class="course-image">
+              <span class="course-badge">DESIGN</span>
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <div class="course-content">
+              <h3>CATIA</h3>
+              <p>
+                Build advanced 3D modeling and product design
+                capabilities using CATIA.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 1 Year 6 Months</span>
+                <span><i class="fa-solid fa-signal"></i> Advanced</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹40,000</span>
+                <a href="#" class="course-link" onclick="openCourse('catia')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="mechanical">
+            <div class="course-image">
+              <span class="course-badge">CAD</span>
+              <i class="fa-solid fa-industry"></i>
+            </div>
+            <div class="course-content">
+              <h3>Creo Parametric</h3>
+              <p>
+                Learn parametric modeling, assemblies and
+                engineering design workflows.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 1 Year 6 Months</span>
+                <span><i class="fa-solid fa-signal"></i> Advanced</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹38,000</span>
+                <a href="#" class="course-link" onclick="openCourse('creo')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="programming">
+            <div class="course-image">
+              <span class="course-badge">PROGRAMMING</span>
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <div class="course-content">
+              <h3>Python Programming</h3>
+              <p>
+                Learn Python fundamentals, problem solving,
+                automation and practical projects.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 1 Year</span>
+                <span><i class="fa-solid fa-signal"></i> Beginner</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹35,000</span>
+                <a href="#" class="course-link" onclick="openCourse('python')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="programming">
+            <div class="course-image">
+              <span class="course-badge">PROGRAMMING</span>
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="course-content">
+              <h3>C / C++ Programming</h3>
+              <p>
+                Build strong programming fundamentals,
+                logic and problem-solving skills.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 1 Year</span>
+                <span><i class="fa-solid fa-signal"></i> Beginner</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹35,000</span>
+                <a href="#" class="course-link" onclick="openCourse('cpp')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="technology">
+            <div class="course-image">
+              <span class="course-badge">TECHNOLOGY</span>
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="course-content">
+              <h3>IoT & Embedded Systems</h3>
+              <p>
+                Explore sensors, microcontrollers, IoT
+                architecture and practical projects.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 1 Year 6 Months</span>
+                <span><i class="fa-solid fa-signal"></i> Intermediate</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹39,000</span>
+                <a href="#" class="course-link" onclick="openCourse('iot')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="course-card reveal" data-category="technology">
+            <div class="course-image">
+              <span class="course-badge">ADVANCED</span>
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="course-content">
+              <h3>Robotics & Automation</h3>
+              <p>
+                Learn automation concepts, robotics,
+                control systems and project development.
+              </p>
+              <div class="course-meta">
+                <span><i class="fa-regular fa-clock"></i> 2 Years</span>
+                <span><i class="fa-solid fa-signal"></i> Advanced</span>
+              </div>
+              <div class="course-bottom">
+                <span class="course-price">₹40,000</span>
+                <a href="#" class="course-link" onclick="openCourse('robotics')">
+                  Explore →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= MECHANICAL PATH ================= -->
+
+    <section class="path-section" id="mechanical">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">Mechanical Engineering</div>
+          <h2 class="section-title">
+            From engineering drawing to industry-ready design.
+          </h2>
+          <p class="section-description">
+            Follow a structured learning path and build the skills
+            required for modern mechanical design workflows.
+          </p>
+        </div>
+
+        <div class="path">
+
+          <div class="path-step reveal">
+            <div class="path-number">01</div>
+            <h4>Engineering Drawing</h4>
+            <p>Fundamentals & standards</p>
+          </div>
+
+          <div class="path-step reveal">
+            <div class="path-number">02</div>
+            <h4>AutoCAD</h4>
+            <p>2D & 3D drafting</p>
+          </div>
+
+          <div class="path-step reveal">
+            <div class="path-number">03</div>
+            <h4>3D CAD</h4>
+            <p>Solid modeling</p>
+          </div>
+
+          <div class="path-step reveal">
+            <div class="path-number">04</div>
+            <h4>GD&T</h4>
+            <p>Manufacturing drawings</p>
+          </div>
+
+          <div class="path-step reveal">
+            <div class="path-number">05</div>
+            <h4>Manufacturing</h4>
+            <p>CNC & CAM concepts</p>
+          </div>
+
+          <div class="path-step reveal">
+            <div class="path-number">06</div>
+            <h4>Industry Project</h4>
+            <p>Portfolio development</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= WHY US ================= -->
+
+    <section>
+      <div class="container why-grid">
+
+        <div class="why-visual reveal">
+          <div class="blueprint"></div>
+        </div>
+
+        <div>
+          <div class="section-header reveal">
+            <div class="section-tag">Why The AutoCAD Disha</div>
+            <h2 class="section-title">
+              Learn by building, not just watching.
+            </h2>
+            <p class="section-description">
+              Our training approach focuses on practical
+              application, guided projects and industry-oriented skills.
+            </p>
+          </div>
+
+          <div class="why-list">
+
+            <div class="why-item reveal">
+              <div class="why-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div>
+                <h4>Hands-On Learning</h4>
+                <p>
+                  Work directly with the tools and technologies
+                  used in real engineering workflows.
+                </p>
+              </div>
+            </div>
+
+            <div class="why-item reveal">
+              <div class="why-icon">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <div>
+                <h4>Project-Based Training</h4>
+                <p>
+                  Apply your knowledge by building practical
+                  projects that can become part of your portfolio.
+                </p>
+              </div>
+            </div>
+
+            <div class="why-item reveal">
+              <div class="why-icon">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div>
+                <h4>Expert Guidance</h4>
+                <p>
+                  Learn through structured sessions and
+                  trainer-guided technical exercises.
+                </p>
+              </div>
+            </div>
+
+            <div class="why-item reveal">
+              <div class="why-icon">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div>
+                <h4>Course Certification</h4>
+                <p>
+                  Receive a certificate after successfully
+                  completing the selected training program.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">Student Projects</div>
+          <h2 class="section-title">
+            Turn knowledge into projects.
+          </h2>
+          <p class="section-description">
+            Practical projects help students understand how
+            technical skills are applied beyond the classroom.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <div class="project reveal">
+            <div class="project-bg">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div class="project-info">
+              <h3>Mechanical Assembly</h3>
+              <p>3D CAD modeling & assembly design</p>
+            </div>
+          </div>
+
+          <div class="project reveal">
+            <div class="project-bg">
+              <i class="fa-solid fa-industry"></i>
+            </div>
+            <div class="project-info">
+              <h3>CNC Component Design</h3>
+              <p>Manufacturing-oriented CAD project</p>
+            </div>
+          </div>
+
+          <div class="project reveal">
+            <div class="project-bg">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="project-info">
+              <h3>Automation Prototype</h3>
+              <p>Mechanical + electronics integration</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= TRAINERS ================= -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">Our Trainers</div>
+          <h2 class="section-title">
+            Learn from experienced professionals.
+          </h2>
+        </div>
+
+        <div class="trainer-grid">
+
+          <div class="trainer reveal">
+            <div class="trainer-photo">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Mechanical Design Trainer</h3>
+            <p>CAD / Mechanical Design</p>
+          </div>
+
+          <div class="trainer reveal">
+            <div class="trainer-photo">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>CAD Specialist</h3>
+            <p>AutoCAD / SolidWorks</p>
+          </div>
+
+          <div class="trainer reveal">
+            <div class="trainer-photo">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Programming Trainer</h3>
+            <p>Python / C++ / Web</p>
+          </div>
+
+          <div class="trainer reveal">
+            <div class="trainer-photo">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Technology Trainer</h3>
+            <p>IoT / Robotics / Automation</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">Student Feedback</div>
+          <h2 class="section-title">
+            What our learners say.
+          </h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+          <div class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The practical approach helped me understand
+              AutoCAD much better than simply studying theory."
+            </p>
+            <div class="student">
+              <div class="student-avatar">AK</div>
+              <div>
+                <strong>Aditya K.</strong>
+                <span>Mechanical Engineering Student</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The projects gave me something practical to
+              showcase when discussing my technical skills."
+            </p>
+            <div class="student">
+              <div class="student-avatar">RS</div>
+              <div>
+                <strong>Rahul S.</strong>
+                <span>Engineering Student</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The course structure made it easy to move from
+              basic concepts to more advanced design work."
+            </p>
+            <div class="student">
+              <div class="student-avatar">PN</div>
+              <div>
+                <strong>Priya N.</strong>
+                <span>CAD Learner</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= CERTIFICATE ================= -->
+
+    <section>
+      <div class="container">
+
+        <div class="certificate reveal">
+
+          <div class="certificate-content">
+            <div class="section-tag">Certification</div>
+            <h2>Complete your course. Earn your certificate.</h2>
+            <p>
+              Successfully complete your selected training program
+              and receive a course completion certificate that can
+              be included in your professional portfolio.
+            </p>
+
+            <br>
+
+            <a href="#contact" class="btn btn-primary">
+              Start Learning
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="certificate-icon">
+            <i class="fa-solid fa-award"></i>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag">FAQ</div>
+          <h2 class="section-title">
+            Frequently asked questions.
+          </h2>
+        </div>
+
+        <div class="faq">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do I need prior AutoCAD experience?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No. Beginner-level AutoCAD courses can start
+                from engineering drawing fundamentals and gradually
+                introduce 2D and 3D modeling.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Are these courses suitable for students?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. Courses can be selected according to your
+                current academic level, technical background and
+                career goals.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you provide certificates?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Course completion certificates can be provided
+                according to the institute's certification policy.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I join a course without a mechanical background?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Several courses are suitable for beginners.
+                Course prerequisites should be checked before enrollment.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Are practical projects included?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                The course structure can include practical exercises
+                and projects designed around the selected technology.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+      <div class="container contact-grid">
+
+        <div>
+          <div class="section-header reveal">
+            <div class="section-tag">Get In Touch</div>
+            <h2 class="section-title">
+              Ready to start learning?
+            </h2>
+            <p class="section-description">
+              Send us your details and our counsellor can help
+              you choose a suitable course.
+            </p>
+          </div>
+
+          <div class="contact-info">
+
+            <div class="contact-item reveal">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4>Institute Address</h4>
+                <p>Maharashtra, India</p>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+91 XXXXX XXXXX</p>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>info@technova.institute</p>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div>
+                <h4>Training Hours</h4>
+                <p>Monday – Saturday | 9:00 AM – 7:00 PM</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="contact-form reveal">
+
+          <h3 style="font-family:'Space Grotesk'; margin-bottom:7px;">
+            Course Enquiry
+          </h3>
+
+          <p style="font-size:12px;color:var(--muted);margin-bottom:22px;">
+            Tell us what you want to learn.
+          </p>
+
+          <form id="enquiryForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="you@example.com">
+              </div>
+
+              <div class="form-group">
+                <label>Course</label>
+                <select required>
+                  <option value="">Select Course</option>
+                  <option>AutoCAD 2D & 3D</option>
+                  <option>SolidWorks</option>
+                  <option>CATIA</option>
+                  <option>Creo</option>
+                  <option>Python Programming</option>
+                  <option>C / C++</option>
+                  <option>IoT & Embedded Systems</option>
+                  <option>Robotics & Automation</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label>Message</label>
+                <textarea
+                  placeholder="Tell us about your learning goals..."
+                ></textarea>
+              </div>
+
+              <div class="form-group full">
+                <button class="btn btn-primary" style="width:100%;justify-content:center;">
+                  Submit Enquiry
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-mark">
+              <i class="fa-solid fa-gear"></i>
+            </span>
+            THE AUTOCAD DISHA
+          </a>
+
+          <p>
+            Industry-oriented technical training for the next
+            generation of engineers, designers and developers.
+          </p>
+        </div>
+
+        <div>
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="#courses">AutoCAD</a></li>
+            <li><a href="#courses">SolidWorks</a></li>
+            <li><a href="#courses">CATIA</a></li>
+            <li><a href="#courses">Programming</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Institute</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#mechanical">Learning Path</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 The AutoCAD Disha. All rights reserved.</span>
+        <span>Engineering • Design • Technology</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= COURSE MODAL ================= -->
+
+  <div class="modal" id="courseModal">
+
+    <div class="modal-box">
+
+      <button class="modal-close" onclick="closeCourse()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 id="modalTitle">Course</h2>
+
+      <p id="modalDescription"></p>
+
+      <h4 style="margin-bottom:12px;">Course Modules</h4>
+
+      <div class="module-list" id="moduleList"></div>
+
+      <a href="#contact" class="btn btn-primary" onclick="closeCourse()">
+        Enquire About Course
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- BACK TO TOP -->
+
+  <button class="top-btn" id="topBtn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+
+      const icon = menuBtn.querySelector("i");
+
+      if (navLinks.classList.contains("show")) {
+        icon.className = "fa-solid fa-xmark";
+      } else {
+        icon.className = "fa-solid fa-bars";
+      }
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.querySelector("i").className = "fa-solid fa-bars";
+      });
+    });
+
+
+    /* COURSE FILTER */
+
+    const filters = document.querySelectorAll(".filter");
+    const courses = document.querySelectorAll(".course-card");
+
+    filters.forEach(filter => {
+
+      filter.addEventListener("click", () => {
+
+        filters.forEach(btn => btn.classList.remove("active"));
+        filter.classList.add("active");
+
+        const selected = filter.dataset.filter;
+
+        courses.forEach(course => {
+
+          if (
+            selected === "all" ||
+            course.dataset.category === selected
+          ) {
+            course.style.display = "block";
+          } else {
+            course.style.display = "none";
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* COURSE DATA */
+
+    const courseData = {
+
+      autocad: {
+        title: "AutoCAD 2D & 3D",
+        description:
+          "Learn professional engineering drafting, 2D documentation and 3D modeling using AutoCAD.",
+        modules: [
+          "Engineering Drawing Fundamentals",
+          "AutoCAD Interface & Tools",
+          "2D Drawing & Drafting",
+          "Layers, Dimensions & Annotations",
+          "Isometric & Orthographic Drawings",
+          "3D Modeling Fundamentals",
+          "Mechanical Components",
+          "Final Practical Project"
+        ]
+      },
+
+      solidworks: {
+        title: "SolidWorks",
+        description:
+          "Learn 3D part modeling, assemblies, engineering drawings and mechanical product design.",
+        modules: [
+          "SolidWorks Interface",
+          "Sketching & Constraints",
+          "Part Modeling",
+          "Features & Design Intent",
+          "Assembly Modeling",
+          "Exploded Views",
+          "Engineering Drawings",
+          "Mechanical Design Project"
+        ]
+      },
+
+      catia: {
+        title: "CATIA",
+        description:
+          "Develop advanced CAD skills for mechanical product design and 3D modeling.",
+        modules: [
+          "CATIA Interface",
+          "Sketcher Workbench",
+          "Part Design",
+          "Generative Shape Design",
+          "Assembly Design",
+          "Drafting",
+          "Surface Modeling",
+          "Final Design Project"
+        ]
+      },
+
+      creo: {
+        title: "Creo Parametric",
+        description:
+          "Learn parametric modeling and professional mechanical design workflows.",
+        modules: [
+          "Creo Interface",
+          "Sketcher",
+          "Part Modeling",
+          "Parametric Features",
+          "Assembly Design",
+          "Sheet Metal Basics",
+          "Engineering Drawings",
+          "Industry-Oriented Project"
+        ]
+      },
+
+      python: {
+        title: "Python Programming",
+        description:
+          "Build programming fundamentals and practical problem-solving skills using Python.",
+        modules: [
+          "Python Fundamentals",
+          "Variables & Data Types",
+          "Conditions & Loops",
+          "Functions",
+          "Lists, Tuples & Dictionaries",
+          "Object-Oriented Programming",
+          "File Handling",
+          "Practical Python Project"
+        ]
+      },
+
+      cpp: {
+        title: "C / C++ Programming",
+        description:
+          "Develop strong programming fundamentals and logical problem-solving skills.",
+        modules: [
+          "Programming Fundamentals",
+          "Variables & Operators",
+          "Conditional Statements",
+          "Loops",
+          "Functions",
+          "Arrays & Strings",
+          "Pointers & OOP",
+          "Programming Projects"
+        ]
+      },
+
+      iot: {
+        title: "IoT & Embedded Systems",
+        description:
+          "Explore microcontrollers, sensors, communication and Internet of Things applications.",
+        modules: [
+          "Embedded Systems Fundamentals",
+          "Microcontrollers",
+          "Sensors & Actuators",
+          "Arduino / ESP32",
+          "Communication Protocols",
+          "IoT Architecture",
+          "Cloud Connectivity",
+          "IoT Prototype Project"
+        ]
+      },
+
+      robotics: {
+        title: "Robotics & Automation",
+        description:
+          "Learn robotics fundamentals, automation concepts and practical system development.",
+        modules: [
+          "Robotics Fundamentals",
+          "Sensors & Actuators",
+          "Motors & Control",
+          "Microcontrollers",
+          "Automation Concepts",
+          "Robot Mechanisms",
+          "Control Systems",
+          "Automation Project"
+        ]
+      }
+
+    };
+
+
+    /* COURSE MODAL */
+
+    const modal = document.getElementById("courseModal");
+
+    function openCourse(courseName) {
+
+      event.preventDefault();
+
+      const course = courseData[courseName];
+
+      if (!course) return;
+
+      document.getElementById("modalTitle").textContent = course.title;
+
+      document.getElementById("modalDescription").textContent =
+        course.description;
+
+      const moduleList = document.getElementById("moduleList");
+
+      moduleList.innerHTML = "";
+
+      course.modules.forEach(module => {
+
+        const item = document.createElement("div");
+
+        item.className = "module";
+
+        item.innerHTML =
+          `<i class="fa-solid fa-circle-check"></i>${module}`;
+
+        moduleList.appendChild(item);
+
+      });
+
+      modal.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCourse() {
+
+      modal.classList.remove("show");
+
+      document.body.style.overflow = "";
+
+    }
+
+    modal.addEventListener("click", e => {
+
+      if (e.target === modal) {
+        closeCourse();
+      }
+
+    });
+
+
+    /* FAQ */
+
+    document.querySelectorAll(".faq-question").forEach(question => {
+
+      question.addEventListener("click", () => {
+
+        const item = question.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(other => {
+
+          if (other !== item) {
+            other.classList.remove("open");
+          }
+
+        });
+
+        item.classList.toggle("open");
+
+      });
+
+    });
+
+
+    /* FORM */
+
+    document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+
+      e.preventDefault();
+
+      alert(
+        "Thank you for your enquiry! Our counsellor will contact you soon."
+      );
+
+      this.reset();
+
+    });
+
+
+    /* SCROLL REVEAL */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.10
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* BACK TO TOP */
+
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 500) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
+      }
+
+    });
+
+    topBtn.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* ESCAPE MODAL */
+
+    document.addEventListener("keydown", e => {
+
+      if (e.key === "Escape") {
+        closeCourse();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
